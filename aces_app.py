@@ -160,9 +160,9 @@ def chat_interface():
     if "messages" not in st.session_state:
         st.session_state.messages = []
 
-    # Display chat messages with custom avatars
+    # Display chat messages with consistent file extensions
     for message in st.session_state.messages:
-        avatar_img = "assistant_avatar.png" if message["role"] == "assistant" else "user_avatar.png"
+        avatar_img = "assistant_avatar.jpg" if message["role"] == "assistant" else "user_avatar.jpg"
         with st.chat_message(message["role"], avatar=avatar_img):
             st.markdown(message["content"])
 
@@ -228,3 +228,4 @@ def main_page():
 
 if __name__ == "__main__":
     main_page()
+
