@@ -1,0 +1,14 @@
+PyPDF2
+pytesseract
+Pillow
+PyMuPDF
+tqdm
+openai
+pdf2image
+faiss-cpu
+numpy
+anthropic
+tiktoken
+nltk
+streamlit
+pandas
