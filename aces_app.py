@@ -192,6 +192,31 @@ def chat_interface():
 
 def main_page():
     """Main page layout and functionality"""
+    # Add custom CSS for fixed chat container
+    st.markdown("""
+    <style>
+    .chat-container {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 800px;
+        background-color: white;
+        padding: 1rem;
+        z-index: 1000;
+    }
+    
+    /* Add padding to prevent content from being hidden behind chat */
+    .main-content {
+        padding-bottom: 200px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    # Wrap header content in a div with main-content class
+    st.markdown('<div class="main-content">', unsafe_allow_html=True)
+    
     # Load metadata files
     with open(METADATA_FILE_PATH_CHAPTERS, 'r') as f:
         chapter_metadata = json.load(f)
@@ -221,11 +246,12 @@ def main_page():
             institutional racism and dark academia.
             """)
     
-    # Chat container
-    chat_container = st.container()
-    with chat_container:
-        chat_interface()
+    st.markdown('</div>', unsafe_allow_html=True)
+    
+    # Chat container with fixed positioning
+    st.markdown('<div class="chat-container">', unsafe_allow_html=True)
+    chat_interface()
+    st.markdown('</div>', unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main_page()
-
