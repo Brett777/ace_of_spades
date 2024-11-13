@@ -8,7 +8,7 @@ import textwrap
 from openai import OpenAI
 
 # Initialize OpenAI client
-client = OpenAI()
+client = OpenAI(api_key=st.secrets.openai_api_key)
 
 # Set page configuration
 st.set_page_config(page_title="Ace of Spades", layout="centered")
