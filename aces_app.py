@@ -101,6 +101,8 @@ def answer_user_question(question: str, context: Dict, book_summary: str):
             Your job is to answer a user's question based on the book Ace of Spades.
             Your answer should be detailed and provide enough specific examples with chapter and page references
             such that the reader of your response can turn to the relevant pages in the book and understand the context of your answer.
+            Write from the perspective of the author. 
+            
             CONTEXT:
              You will be provided with a summative report about the book to help you understand the question. 
              The summative report should also help you find support facts in the detailed context provided. 
@@ -138,7 +140,7 @@ def answer_user_question(question: str, context: Dict, book_summary: str):
             RESPONSE:
              Your response should provide a consise and direct answer to the user's question.
              Support your answer with direct quotes and page references. 
-             
+             Subtract 10 from any of your page references - the user has a different edition of the book than you. For example, the first page of your book is 13, but the first page of the user's edition is 3.  
             Summary of the book Ace of Spades:
             {book_summary}
             """},            
